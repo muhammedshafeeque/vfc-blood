@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../../Api/Api'
 import { Text } from '@chakra-ui/react'
+import './Home.scss'
 function Groups() {
     const [groupe,setGroupe]=useState()
     useEffect(()=>{
@@ -15,10 +16,10 @@ function Groups() {
         }
     }
   return (
-    <div>
+    <div className='blood_card_area'>
         {groupe&&groupe.map((g)=>{
-            return <div key={g._id}>
-                <Text> {g.name}</Text>
+            return <div className='blood_card'  key={g._id}>
+                <Text textAlign={'center'} fontSize={'30px'} fontWeight={'bold'}> {g.name}</Text>
             </div>
         })}
     </div>

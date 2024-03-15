@@ -1,0 +1,25 @@
+.blood_card{
+    width: 18rem;
+    height: 18rem;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    margin: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s,transform 0.3s;
+}
+.blood_card_area{
+    margin-left: 8%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.blood_card:hover {
+    background-color: darkred; 
+    transform: scale(1.05);
+}
+.Advance_search_component{
+    width: 100%;
+}

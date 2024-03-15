@@ -1,8 +1,10 @@
 import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import Groups from "./Groups";
-
+import AdvanceSearch from "./AdvanceSearch";
+import FloatingActionButton from "../../Components/FloatingAcrtionButton/FlotingButton";
 function Home() {
+  
   return (
     <div>
       <Tabs mt={3} width={'100%'} variant="soft-rounded" colorScheme="green">
@@ -15,10 +17,11 @@ function Home() {
             <Groups/>
           </TabPanel>
           <TabPanel>
-            <p>two!</p>
+           <AdvanceSearch/>
           </TabPanel>
         </TabPanels>
       </Tabs>
+      <FloatingActionButton/>
     </div>
   );
 }
