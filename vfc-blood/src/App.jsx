@@ -4,7 +4,7 @@ import Header from "./Components/Header/Header";
 import { Route, Routes } from "react-router-dom";
 function App() {
   const Home =React.lazy(()=>import("./Pages/Home/Home"))
-  const BloodList=React.lazy(()=>import('./Pages/BloodList/BloodLis'))
+  const BloodList=React.lazy(()=>import('./Pages/BloodListPage/BloodListPage'))
   const AddNew=React.lazy(()=>import('./Pages/Add/Add'))
   return (
     <div className="App">

@@ -5,4 +5,5 @@ export const collections={
     ORGANIZATION:'organization',
     LOCATIONS:'locations',
     AVAILABILITY:'availability',
+    DONOR:'donors'
 }

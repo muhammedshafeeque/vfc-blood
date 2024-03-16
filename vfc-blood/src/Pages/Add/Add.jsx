@@ -1,20 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, FormControl, FormLabel, Input, Button, Stack, Select } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import LocationAutocomplete from '../../Components/LocationAutoCompleate/LocationAutoCompleate';
-
+import axios  from '../../Api/Api';
 function DonateForm() {
+  const [groups,setGroups]=useState([])
   const { register, handleSubmit } = useForm({
-    defaultValues: {
-      name: 'John Doe',
-      dob: '1992-01-01', // Example date of birth
-      weight: 68,
-      blood: 'A+',
-      location: 'New York',
-      mobile: '1234567890',
-      lastDonate: '2023-03-14',
-      status: 'Active'
-    },
     form: 'donateForm' // Set form name to "donateForm"
   });
 
@@ -22,7 +13,17 @@ function DonateForm() {
     console.log(data);
     // Handle form submission here
   };
-
+  useEffect(()=>{
+    fetchGorps()
+  },[])
+  const fetchGorps=async()=>{
+    try {
+      let {data}=await axios.get('/core/blood-group')
+      setGroups(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <Box p={4} borderWidth="1px" borderRadius="md" boxShadow="md">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -42,14 +43,11 @@ function DonateForm() {
           <FormControl id="blood" isRequired>
             <FormLabel>Blood Type</FormLabel>
             <Select placeholder="Select blood type" {...register('blood')}>
-              <option value="A+">A+</option>
-              <option value="A-">A-</option>
-              <option value="B+">B+</option>
-              <option value="B-">B-</option>
-              <option value="O+">O+</option>
-              <option value="O-">O-</option>
-              <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
+              {groups.map((g)=>{
+                return  <option key={g._id} value={g._id}>{g.name}</option>
+              })}
+             
+              
             </Select>
           </FormControl>
           <FormControl id="location" isRequired>
