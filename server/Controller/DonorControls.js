@@ -3,6 +3,7 @@ import { DONOR } from "../Models/DonorModal.js";
 import moment from 'moment';
 export const createDonor = async (req, res, next) => {
   try {
+    req.body.status='active'
     await DONOR.create(req.body);
     res.send({ message: "Donor Created Successfully" });
   } catch (error) {

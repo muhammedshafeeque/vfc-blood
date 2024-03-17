@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import axios from 'axios';
+import axios from '../../Api/Api'
 
 function LocationAutocomplete({ value, onChange }) {
   const [options, setOptions] = useState([]);
 
   const fetchOptions = async (inputValue) => {
     try {
-      const response = await axios.get(`YOUR_API_ENDPOINT?query=${inputValue}`);
-      const data = response.data; // Assuming API returns an array of options
+      const response = await axios.get(`/core/location?query=${inputValue}`);
+      const data = response.data.map(option => ({
+        value: option,
+        label: option.name
+      }));
       setOptions(data);
     } catch (error) {
       console.error('Error fetching options:', error);
@@ -21,7 +24,7 @@ function LocationAutocomplete({ value, onChange }) {
 
   const loadOptions = (inputValue, callback) => {
     if (!inputValue) {
-      callback([]);
+      setOptions([]);
       return;
     }
 
@@ -40,5 +43,4 @@ function LocationAutocomplete({ value, onChange }) {
   );
 }
 
-export default LocationAutocomplete
-
+export default LocationAutocomplete;
