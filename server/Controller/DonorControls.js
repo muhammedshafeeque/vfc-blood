@@ -32,6 +32,7 @@ export const getDonor = async (req, res, next) => {
       }
     }
     query.group&&(keywords.blood=query.group)
+    query.location&&(keywords.location=query.location)
     let options = {
       limit: parseInt(query.limit) || 10,
       skip: parseInt(query.skip) || 0 
