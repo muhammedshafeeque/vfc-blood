@@ -38,7 +38,7 @@ function BloodLis({data}) {
           
         </tbody>
       </Table>
-      <FloatingActionButton/>
+      {/* <FloatingActionButton/> */}
     </div>
   );
 }

@@ -21,7 +21,7 @@ function Home() {
           </TabPanel>
         </TabPanels>
       </Tabs>
-      <FloatingActionButton/>
+      {/* <FloatingActionButton/> */}
     </div>
   );
 }
