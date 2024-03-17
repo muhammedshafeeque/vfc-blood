@@ -31,7 +31,10 @@ function ProfileViewModal({ children , data }) {
             </Table>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="green">Call</Button>
+            <Button colorScheme="green" onClick={()=>{
+              const telUrl = `tel:${data.mobile}`;
+              window.open(telUrl, '_blank');
+            }} >Call</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

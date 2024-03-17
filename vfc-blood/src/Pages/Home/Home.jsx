@@ -7,7 +7,8 @@ function Home() {
   
   return (
     <div>
-      <Tabs mt={3} width={'100%'} variant="soft-rounded" colorScheme="green">
+       <Groups/>
+      {/* <Tabs mt={3} width={'100%'} variant="soft-rounded" colorScheme="green">
         <TabList width={'100%'}>
           <Tab width={'50%'}>Groupe Vice</Tab>
           <Tab width={'50%'}>Advance Search</Tab>
@@ -20,7 +21,7 @@ function Home() {
            <AdvanceSearch/>
           </TabPanel>
         </TabPanels>
-      </Tabs>
+      </Tabs> */}
       <FloatingActionButton/>
     </div>
   );

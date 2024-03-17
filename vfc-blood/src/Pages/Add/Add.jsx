@@ -92,10 +92,10 @@ function DonateForm() {
               {...register("mobile")}
             />
           </FormControl>
-          <FormControl id="lastDonate" isRequired>
+          {/* <FormControl id="lastDonate" isRequired>
             <FormLabel>Last Donation Date</FormLabel>
             <Input type="date" {...register("lastDonate")} />
-          </FormControl>
+          </FormControl> */}
           {/* <FormControl id="status" isRequired>
             <FormLabel>Status</FormLabel>
             <Input type="text" placeholder="Enter status" {...register('status')} />
