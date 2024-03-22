@@ -16,7 +16,10 @@ function Header() {
         VFC BLOOD
       </Text>
 
-      <AiOutlineLogin  className="login-icon" />
+      <AiOutlineLogin  onClick={(e)=>{
+        e.preventDefault()
+        navigate('/login')
+      }} className="login-icon" />
     </div>
   );
 }
